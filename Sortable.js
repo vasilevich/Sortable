@@ -879,6 +879,8 @@
           sortable.options[option] = modified;
         }
       }
+
+      sortable.plugins = plugins;
     },
     getEventProperties: function getEventProperties(name, sortable) {
       var eventProperties = {};
@@ -2476,9 +2478,7 @@
         el.removeAttribute('draggable');
       });
 
-      if (el === rootEl) {
-        this._onDrop();
-      }
+      this._onDrop();
 
       this._disableDelayedDragEvents();
 
@@ -3598,6 +3598,7 @@
 
                 if (update) {
                   dispatchSortableEvent('update');
+                  dispatchSortableEvent('sort');
                 }
               }
             } // Must be done after capturing individual rects (scroll bar)

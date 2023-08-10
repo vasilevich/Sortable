@@ -67,6 +67,8 @@ export default {
 				sortable.options[option] = modified;
 			}
 		}
+
+		sortable.plugins = plugins;
 	},
 	getEventProperties(name, sortable) {
 		let eventProperties = {};

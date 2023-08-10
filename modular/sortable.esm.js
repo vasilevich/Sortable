@@ -873,6 +873,8 @@ var PluginManager = {
         sortable.options[option] = modified;
       }
     }
+
+    sortable.plugins = plugins;
   },
   getEventProperties: function getEventProperties(name, sortable) {
     var eventProperties = {};
@@ -3590,6 +3592,7 @@ function MultiDragPlugin() {
 
               if (update) {
                 dispatchSortableEvent('update');
+                dispatchSortableEvent('sort');
               }
             }
           } // Must be done after capturing individual rects (scroll bar)
